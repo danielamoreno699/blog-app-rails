@@ -3,7 +3,7 @@
 # Blog App
 
 # UML Diagram
-<img src="https://github.com/microverseinc/curriculum-ruby/blob/main/group-capstone/images/catalog_of_my_things.png">
+
 
 
 <!-- TABLE OF CONTENTS -->
