@@ -28,7 +28,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📚🎵🎮 Collectify <a name="about-project"></a>
+# 📚🎵🎮 Blog Appg <a name="about-project"></a>
 
 **Blog App** is an app that uses rails and postgress database. its  a full functional website that shows the list of posts amd empower readers to interact by adding comments and liking posts. It follows a specified wireframe for the User View.
 
