@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-# Application for Blog
+# Blog App
 
 # UML Diagram
 <img src="https://github.com/microverseinc/curriculum-ruby/blob/main/group-capstone/images/catalog_of_my_things.png">
@@ -28,9 +28,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📚🎵🎮 Blog Appg <a name="about-project"></a>
+# 📚🎵🎮 Blog App <a name="about-project"></a>
 
-**Blog App** is an app that uses rails and postgress database. its  a full functional website that shows the list of posts amd empower readers to interact by adding comments and liking posts. It follows a specified wireframe for the User View.
+**Blog App** The Blog app will be a classic example of a blog website. You will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -61,17 +61,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **DatabaseModel:** Creates a database model based on the diagram.
-- **Validations and model specs:** 
-- **processing data models** 
-- **setup controllers** 
-- **views** 
-- **forms** 
-- **integration specs for views and fixing n+1 problems:** 
-- **Add device:** 
-- **Add authorization rules** 
-- **Add api endpoints**
-- **Api documentation**  
+- **Creating data model** 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -92,10 +82,9 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-Ensure you have Ruby and On Rails are installed on your system. You can check by running the code below in your terminal.
+Ensure you have Ruby installed on your system. You can check by running the code below in your terminal.
 ```sh
   ruby --version
-  rails --version
 ```
 ### Setup
 
@@ -114,16 +103,17 @@ bundle install
 ```
 
 ### Usage
- - To run the app, execute the `rails s`:
+ - To run Collectify, execute the `main.rb file`:
 
 ```sh
-  rails s
+  ruby main.rb
 ```
-
+The console app will present a menu of options for managing and interacting with your collections. Simply follow the prompts and provide the necessary information when prompted. The program will process and output your request.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
+
 
 
 👤 **Daniela Moreno**
@@ -138,6 +128,13 @@ bundle install
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **User Interface**
+- **validations:** 
+- **processing data in models:** 
+- **set up and controllers** 
+- **views** 
+- **forms** 
+- **integrations specs for views ** 
+- **add advice** 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
