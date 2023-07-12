@@ -3,10 +3,10 @@ class Post < ApplicationRecord
     has_many :likes
     has_many :comments
 
+   
     after_create :increment_post_counter
     after_destroy :decrement_post_counter
   
-    private
 
     def increment_post_counter
         puts 'Incrementing post counter'
@@ -16,4 +16,8 @@ class Post < ApplicationRecord
         puts 'Decrementing post counter'
         user.decrement!(:post_counter)
     end
+
+    def recent_comments(limit)
+        comments.order(created_at: :desc).limit(limit)
+      end
 end
