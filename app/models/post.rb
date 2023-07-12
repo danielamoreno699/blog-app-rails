@@ -3,10 +3,8 @@ class Post < ApplicationRecord
   has_many :likes
   has_many :comments
 
-
   after_create :increment_post_counter
   after_destroy :decrement_post_counter
-
 
   def increment_post_counter
     puts 'Incrementing post counter'

@@ -5,7 +5,6 @@ class Like < ApplicationRecord
   after_create :increment_likes_counter
   after_destroy :decrement_likes_counter
 
-
   def increment_likes_counter
     puts 'Incrementing likes counter'
     post.increment!(:LikesCounter)
