@@ -1,5 +1,4 @@
 class Comment < ApplicationRecord
-
   belongs_to :user, foreign_key: 'author_id'
   belongs_to :post, foreign_key: 'post_id'
 
@@ -7,12 +6,10 @@ class Comment < ApplicationRecord
   after_destroy :decrement_comments_counter
 
   def increment_comments_counter
-    puts 'Incrementing comments counter'
     post.increment!(:CommentsCounter)
   end
 
   def decrement_comments_counter
-    puts 'Decrementing comments counter'
     post.decrement!(:CommentsCounter)
   end
 end

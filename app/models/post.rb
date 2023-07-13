@@ -1,8 +1,7 @@
 class Post < ApplicationRecord
-
   validates :Title, presence: true, length: { maximum: 250 }
-  validates :CommentsCounter,  numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
-  validates :LikesCounter,  numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
+  validates :CommentsCounter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
+  validates :LikesCounter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
 
   belongs_to :user, foreign_key: 'author_id'
   has_many :likes
@@ -12,12 +11,10 @@ class Post < ApplicationRecord
   after_destroy :decrement_post_counter
 
   def increment_post_counter
-    puts 'Incrementing post counter'
     user.increment!(:post_counter)
   end
 
   def decrement_post_counter
-    puts 'Decrementing post counter'
     user.decrement!(:post_counter)
   end
 
