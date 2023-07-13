@@ -25,6 +25,26 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
+  describe '#increment_post_counter' do
+  it 'increments the post_counter of the associated user' do
+    user = User.create(name: 'John Doe', post_counter: 0)
+    post = Post.create(author_id: user.id, Title: 'Second Post', Text: 'More thoughts', CommentsCounter: 0, LikesCounter: 0)
+
+    expect { post.increment_post_counter }.to change { user.reload.post_counter }.by(1)
+  end
+end
+
+describe '#decrement_post_counter' do
+    it 'decrements the post_counter of the associated user' do
+      user = User.create(name: 'John Doe', post_counter: 4)
+      post = Post.create(author_id: user.id, Title: 'Second Post', Text: 'More thoughts', CommentsCounter: 0, LikesCounter: 0)
+
+      expect { post.decrement_post_counter }.to change { user.reload.post_counter }.by(-1)
+    end
+  end
+
+
+
   describe '#recent_comments' do
   it 'returns the five most recent comments' do
     # Create a user
