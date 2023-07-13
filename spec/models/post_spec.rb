@@ -25,4 +25,27 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
+  describe '#recent_comments' do
+  it 'returns the five most recent comments' do
+    # Create a user
+    user = User.create(name: 'John Doe', post_counter: 0)
+
+    # Create a post
+    post = Post.create(author_id: user.id, Title: 'Second Post', Text: 'More thoughts', CommentsCounter: 0, LikesCounter: 0)
+
+    # Create test comments for the post
+    comment1 = Comment.create(post_id: post.id, author_id: user.id, Text: 'Hi Tom!')
+    comment2 = Comment.create(post_id: post.id, author_id: user.id, Text: 'Hi Tom!')
+    comment3 = Comment.create(post_id: post.id, author_id: user.id, Text: 'Hi Tom!')
+    comment4 = Comment.create(post_id: post.id, author_id: user.id, Text: 'Hi Tom!')
+    comment5 = Comment.create(post_id: post.id, author_id: user.id, Text: 'Hi Tom!')
+    comment6 = Comment.create(post_id: post.id, author_id: user.id, Text: 'Hi Tom!')
+
+    newer_comments = [comment6, comment5, comment4, comment3, comment2]
+
+    # Ensure that only the five most recent comments are returned
+    expect(post.recent_comments).to eq(newer_comments)
+  end
+  end
+
 end
