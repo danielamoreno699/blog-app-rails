@@ -45,8 +45,6 @@ RSpec.describe Post, type: :model do
     end
   end
 
-
-
   describe '#recent_comments' do
     it 'returns the five most recent comments' do
       # Create a user
