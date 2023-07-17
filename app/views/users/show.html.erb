@@ -2,18 +2,22 @@
 
 <p>User Name: <%= @user.name %></p>
 <p>User Posts: <%= @user.post_counter %></p>
-
 <p>User Bio: <%= @user.bio %></p>
 
 <ul>
   <% @user.posts.each do |post| %>
     <li>
-      <%= link_to post.Title, user_post_path(@user, post) %>
+    <%= link_to post.Title, user_posts_path(user_id: @user.id) %>
+
       <%= post.Text %>
       Comments: <%= post.CommentsCounter.nil? ? 0 : post.CommentsCounter %>
       Likes: <%= post.LikesCounter.nil? ? 0 : post.LikesCounter %>
     </li>
   <% end %>
 </ul>
+
+
+
+
 
 

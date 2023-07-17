@@ -1,0 +1,21 @@
+<h1>All Posts</h1>
+
+<div>
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+        <%= link_to post.Title, user_path(post.author_id) %>
+        <%= post.Text %>
+        Comments: <%= post.CommentsCounter.nil? ? 0 : post.CommentsCounter %>
+        Likes: <%= post.LikesCounter.nil? ? 0 : post.LikesCounter %>
+      </li>
+      <ul>
+        <% post.comments.each do |comment| %>
+          <li>
+            <%= comment.Text %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </ul>
+</div>
