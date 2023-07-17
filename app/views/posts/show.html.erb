@@ -7,6 +7,7 @@
       <%= @post.Title %>
       <%= @post.Text %>
       Comments: <%= @post.CommentsCounter.nil? ? 0 : @post.CommentsCounter %>
+      Likes: <%= @post.LikesCounter.nil? ? 0 : @post.LikesCounter %>
     </li>
   </ul>
 </div>
@@ -18,3 +19,4 @@
     </li>
   <% end %>
 </ul>
+

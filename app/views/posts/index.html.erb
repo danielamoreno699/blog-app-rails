@@ -1,25 +1,43 @@
 <h1>All Posts</h1>
-
-<p>User Name: <%= @user.name %></p>
-<p>User Posts: <%= @user.post_counter %></p>
-
-
-<div>
-  <ul>
-    <% @posts.each do |post| %>
-      <li>
-      <%= link_to post.Title, user_post_path(user_id: post.author_id, id: post.id) %>
-        <%= post.Text %>
-        Comments: <%= post.CommentsCounter.nil? ? 0 : post.CommentsCounter %>
-        Likes: <%= post.LikesCounter.nil? ? 0 : post.LikesCounter %>
-      </li>
-      <ul>
-        <% post.comments.each do |comment| %>
-          <li>
-          Username: <%= comment.Text %>
-          </li>
-        <% end %>
+<html>
+  <head>
+    <%= stylesheet_link_tag 'posts_styles' %>
+  </head>
+  <body>
+    <div class="container-user">
+      <img src="" class="img-user-s">
+      <ul class="ul-user">
+        <li>User Name: <%= @user.name %></li>
+        <li>User Posts: <%= @user.post_counter %></li>
       </ul>
-    <% end %>
-  </ul>
+    </div>
+
+    <div class="users-posts">
+  <% @user.posts.each do |post| %>
+    <div class="post">
+      <%= link_to post.Title, user_post_path(user_id: post.author_id, id: post.id) %>
+      <p><%= post.Text %></p>
+      <div class="text">
+        <p class="comment-text">Comments: <%= post.CommentsCounter.nil? ? 0 : post.CommentsCounter %></p>
+        <p>Likes: <%= post.LikesCounter.nil? ? 0 : post.LikesCounter %></p>
+      </div>
+    </div>
+    <ul class="ul-comments-box">
+      <% post.comments.each do |comment| %>
+        <li>
+          Username: <%= comment.Text %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>
+
+
+
+
+
+
+
+  </body>
+</html>
+
