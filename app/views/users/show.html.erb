@@ -1,21 +1,45 @@
 <h1>User Details</h1>
 
-<p>User Name: <%= @user.name %></p>
-<p>User Posts: <%= @user.post_counter %></p>
-<p>User Bio: <%= @user.bio %></p>
+<html>
+  <head>
+    <%= stylesheet_link_tag 'users_styles' %>
+  </head>
+  <body>
+  <div class="container-user">
+  <img src="" class="img-user-s">
+  <ul class="ul-user">
+    <li>User Name: <%= @user.name %></li>
+    <li>User Posts: <%= @user.post_counter %></li>
+  </ul>
+</div>
 
-<ul>
+<div class="user-bio">
+    <p class="bio-p">user : <%= @user.name %></p>
+    <p><%= @user.bio %></p>
+</div>
+
+
+
+<div class="users-posts">
   <% @user.posts.each do |post| %>
-    <li>
-    <%= link_to post.Title, user_posts_path(user_id: @user.id) %>
+    <div class="post">
+      <h4><%= link_to post.Title, user_posts_path(user_id: @user.id) %></h4>
 
-      <%= post.Text %>
-      Comments: <%= post.CommentsCounter.nil? ? 0 : post.CommentsCounter %>
-      Likes: <%= post.LikesCounter.nil? ? 0 : post.LikesCounter %>
-    </li>
+      
+      <p><%= post.Text %></p>
+
+    <div class="text">
+    <p class="comment-text">Comments: <%= post.CommentsCounter.nil? ? 0 : post.CommentsCounter %></p>
+    <p>Likes: <%= post.LikesCounter.nil? ? 0 : post.LikesCounter %></p>
+    </div>
+     
+    </div>
   <% end %>
-</ul>
+</div>
 
+
+</body>
+</html>
 
 
 
