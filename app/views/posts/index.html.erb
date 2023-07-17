@@ -1,10 +1,14 @@
 <h1>All Posts</h1>
 
+<p>User Name: <%= @user.name %></p>
+<p>User Posts: <%= @user.post_counter %></p>
+
+
 <div>
   <ul>
     <% @posts.each do |post| %>
       <li>
-        <%= link_to post.Title, user_path(post.author_id, post.id) %>
+      <%= link_to post.Title, user_post_path(user_id: post.author_id, id: post.id) %>
         <%= post.Text %>
         Comments: <%= post.CommentsCounter.nil? ? 0 : post.CommentsCounter %>
         Likes: <%= post.LikesCounter.nil? ? 0 : post.LikesCounter %>

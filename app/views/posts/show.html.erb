@@ -1,0 +1,20 @@
+<h1>Post Details</h1>
+
+<div>
+  <ul>
+    <li>
+      <%= @post.id %>
+      <%= @post.Title %>
+      <%= @post.Text %>
+      Comments: <%= @post.CommentsCounter.nil? ? 0 : @post.CommentsCounter %>
+    </li>
+  </ul>
+</div>
+
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li>
+      Username: <%= comment.Text %>
+    </li>
+  <% end %>
+</ul>
