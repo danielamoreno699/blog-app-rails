@@ -18,20 +18,20 @@ h1 {
   
   .user-info {
     display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
+     justify-content: space-between; 
+    /* align-items: center; */
     margin: 10px;
     padding: 10px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 80%;
   }
   
   .img-user {
-    width: 100px;
-    height: 100px;
+    width: 8rem;
+    height: 8rem;
     border-radius: 10%  solid black;
     object-fit: cover;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
   }
   .ul-users {
     display: flex;
@@ -42,6 +42,8 @@ h1 {
     padding: 2%;
     margin: 0;
     width: 80%;
+    height: 5rem;
+    border: 1px solid black;
   }
   
   .ul-users li {
