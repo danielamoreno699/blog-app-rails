@@ -1,13 +1,20 @@
-<h1>All Users</h1>
+<!-- app/views/users/index.html.erb -->
+<html>
+  <head>
+    <%= stylesheet_link_tag 'users_styles' %>
+  </head>
+  <body>
+    <h1>All Users</h1>
 
-<ul>
-  <% @users.each do |user| %>
-    <li>
-      <%= link_to user.name, user_path(user) %>
-    </li>
-    <li>
-    <%= link_to user.post_counter %>
-  </li>
-
-  <% end %>
-</ul>
+    <ul>
+      <% @users.each do |user| %>
+        <li>
+          <%= link_to user.name, user_path(user) %>
+        </li>
+        <li>
+        number of posts: <%= link_to user.post_counter %>
+        </li>
+      <% end %>
+    </ul>
+  </body>
+</html>
