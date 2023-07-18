@@ -23,7 +23,7 @@
     margin: 0;
     width: 90%;
     height: 7rem;
-    border: 1px solid black;
+    border: 1px solid rgb(132, 45, 14);
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
@@ -94,3 +94,15 @@
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
   }
+
+    /* cutsom link */
+    .custom-link-s {
+        color: rgb(93, 93, 233);
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s; /* Add a smooth color transition on hover */
+      }
+    
+      .custom-link-s:hover {
+        color: darkblue; /* Change the color on hover */
+      }

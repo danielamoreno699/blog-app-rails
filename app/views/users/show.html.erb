@@ -22,7 +22,7 @@
 <div class="users-posts">
   <% @user.posts.each do |post| %>
     <div class="post">
-      <h4><%= link_to post.Title, user_posts_path(user_id: @user.id),class: 'custom-link' %></h4>
+      <h4><%= link_to post.Title, user_posts_path(user_id: @user.id),class: 'custom-link-s' %></h4>
 
       
       <p><%= post.Text %></p>

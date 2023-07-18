@@ -10,7 +10,7 @@
         <div class="user-info">
           <img src="" class="img-user">
           <ul class="ul-users">
-            <li><%= link_to user.name, user_path(user) %></li>
+            <li><%= link_to user.name, user_path(user), class: 'custom-link' %></li>
             <li>Number of posts: <%= user.post_counter %></li>
           </ul>
         </div>

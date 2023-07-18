@@ -103,13 +103,13 @@
   }
 
   /* cutsom link */
-  .custom-link {
+  .custom-link-s {
     color: rgb(93, 93, 233);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s; /* Add a smooth color transition on hover */
   }
 
-  .custom-link:hover {
+  .custom-link-s:hover {
     color: darkblue; /* Change the color on hover */
   }
