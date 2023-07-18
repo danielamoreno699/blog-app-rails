@@ -1,1 +1,50 @@
-/* coming soon */
+/* app/assets/stylesheets/users_styles.css */
+
+h1 {
+    color: #6c5ce7;
+    font-size: 24px;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  .container-users {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .user-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    width: 80%;
+  }
+  
+  .img-user {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 10%;
+    object-fit: cover;
+  }
+  
+  .ul-users {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 2%;
+    margin: 0;
+    width: 85%;
+    height: 5rem;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .ul-users li {
+    margin-right: 10px;
+  }
