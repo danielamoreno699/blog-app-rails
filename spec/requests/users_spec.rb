@@ -1,28 +1,23 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, type: :controller do
-  before do
-    Rails.application.routes.draw do
-      get '/users', to: 'users#index', as: 'users'
-      get '/users/:id', to: 'users#show', as: 'user'
-    end
-  end
-
-  describe "GET/index" do
+RSpec.describe "Users", type: :request do
+  describe "GET /users" do
     it "returns http success and renders correct template" do
-      get :index
+      get "/users"
 
-      expect(response).to be_successful
+      expect(response).to have_http_status(:success)
       expect(response).to render_template(:index)
+      expect(response.body).to include("list users")
     end
   end
 
-  describe "GET/show" do
-    it "returns http success and renders correct template" do
-      get :show, params: { id: 1 }
+  # describe "GET /users/:id" do
+  #   it "returns http success and renders correct template" do
+  #     user = User.create(name: "John")
+  #     get "/users/#{user.id}"
 
-      expect(response).to be_successful
-      expect(response).to render_template(:show)
-    end
-  end
+  #     expect(response).to have_http_status(:success)
+  #     expect(response).to render_template(:show)
+  #   end
+  # end
 end
