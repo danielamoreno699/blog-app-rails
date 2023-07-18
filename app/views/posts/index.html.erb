@@ -1,9 +1,11 @@
+<%  PostsHelper %>
+
 <html>
   <head>
     <%= stylesheet_link_tag 'posts_styles' %>
   </head>
   <body>
-  
+  <h1>Here is the List of posts associated with User account</h1>
 
     <div class="container-user">
       <img src="" class="img-user-s">
@@ -16,7 +18,7 @@
     <div class="users-posts">
       <% @user.posts.each do |post| %>
         <div class="post">
-          <%= link_to post.Title, user_post_path(user_id: post.author_id, id: post.id),class: 'custom-link-s' %>
+          <%= link_to post.Title, user_post_path(user_id: post.author_id, id: post.id) %>
           <p><%= post.Text %></p>
           <div class="text">
             <p class="comment-text">Comments: <%= post.CommentsCounter.nil? ? 0 : post.CommentsCounter %></p>
@@ -24,18 +26,7 @@
           </div>
         </div>
 
-        <ul class="ul-comments-box">
-          <h4 class="section-comments">Section for Comments: </h4>
-          <% if post.comments.blank? %> 
-            <li>no comments for the moment</li>
-          <% else %>
-            <% post.comments.each do |comment| %>
-              <li> 
-                Username: <%= comment.Text.blank? ? 'no comments for the moment' : comment.Text %>
-              </li>
-            <% end %>
-          <% end %>
-        </ul>
+        <%= render_comments_section(post) %>
       <% end %>
     </div>
 

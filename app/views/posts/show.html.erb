@@ -3,7 +3,7 @@
     <%= stylesheet_link_tag 'one_post' %>
   </head>
   <body>
-  
+
     <div class="users-posts">
       <div class="post">
         <div class="text">
@@ -13,14 +13,24 @@
         
         <div class="text-author">
         <p>Title: <%= @post.Title %></p> 
-        <p class="by-author">by: <%= @post.user.name %></p>
+        <p class="by-author"> by: <%= @post.user.name %></p>
         </div>
 
         <p>Text: <%= @post.Text %></p>
       </div>
     </div>
 
-    
-    <%= render_comments_section(post) %>
+    <ul class="ul-comments-box">
+      <h4>Section for Comments: </h4>
+      <% if @post.comments.blank? %> 
+        <li>no comments for the moment</li>
+      <% else %>
+        <% @post.comments.each do |comment| %>
+          <li>
+            Username: <%= comment.Text %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
   </body>
 </html>
