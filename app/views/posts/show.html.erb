@@ -6,10 +6,7 @@
 
     <div class="users-posts">
       <div class="post">
-        <div class="text">
-          <p class="comment-text">Comments: <%= @post.CommentsCounter.nil? ? 0 : @post.CommentsCounter %></p>
-          <p>Likes: <%= @post.LikesCounter.nil? ? 0 : @post.LikesCounter %></p>
-        </div>
+      <%= render_text_section(@post) %>
         
         <div class="text-author">
         <p>Title: <%= @post.Title %></p> 
