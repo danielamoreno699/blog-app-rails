@@ -20,17 +20,7 @@
       </div>
     </div>
 
-    <ul class="ul-comments-box">
-      <h4 class="section-comments">Section for Comments: </h4>
-      <% if @post.comments.blank? %> 
-        <li>no comments for the moment</li>
-      <% else %>
-        <% @post.comments.each do |comment| %>
-          <li>
-            Username: <%= comment.Text %>
-          </li>
-        <% end %>
-      <% end %>
-    </ul>
+    
+    <%= render_comments_section(post) %>
   </body>
 </html>
