@@ -8,10 +8,11 @@
   
   .img-user-s {
     width: 100px;
-    border-radius: 5%;
+    border-radius: 2%;
     object-fit: cover;
     margin-bottom: 10px;
     height: 7rem;
+    background-color: white;
   }
   
   .ul-user {
