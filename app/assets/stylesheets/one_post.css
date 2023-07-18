@@ -37,3 +37,13 @@
     border: 1px solid black;
     width: 90%;
   }
+
+  .text-author{
+    display: flex;
+    flex-direction: row;
+   
+  }
+
+  .by-author{
+    margin-left: 1%;
+  }
