@@ -11,7 +11,7 @@
           <img src="" class="img-user">
           <ul class="ul-users">
             <li><%= link_to user.name, user_path(user) %></li>
-            <li>Number of posts: <%= link_to user.post_counter %></li>
+            <li>Number of posts: <%= user.post_counter %></li>
           </ul>
         </div>
       <% end %>

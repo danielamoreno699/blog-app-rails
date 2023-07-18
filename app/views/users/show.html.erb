@@ -22,7 +22,7 @@
 <div class="users-posts">
   <% @user.posts.each do |post| %>
     <div class="post">
-      <h4><%= link_to post.Title, user_posts_path(user_id: @user.id) %></h4>
+      <h4><%= link_to post.Title, user_posts_path(user_id: @user.id),class: 'custom-link' %></h4>
 
       
       <p><%= post.Text %></p>
@@ -37,6 +37,8 @@
 </div>
 
 <button class="btn btn-primary">see all posts</button>
+
+
 </body>
 </html>
 
