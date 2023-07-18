@@ -42,9 +42,7 @@
   .post{
     display: flex;
     flex-direction: column;
-    margin-bottom: 0; /* Remove the top margin */
-    
-     /* margin: 3% auto ;  */
+    margin-bottom: 0; 
     padding: 2%;
     border: 1px solid black;
     width: 90%; 
@@ -66,8 +64,11 @@
     display: flex;
     flex-direction: column;
     margin-top: 0;
-    /* margin: 0 auto ; */
     padding: 2%;
     border: 1px solid black;
     width: 90%;
+  }
+
+  .h4-section-comments{
+    margin: 0 auto;
   }

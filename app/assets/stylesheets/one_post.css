@@ -1,0 +1,39 @@
+/* posts */
+.users-posts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .post{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0; /* Remove the top margin */
+    
+     /* margin: 3% auto ;  */
+    padding: 2%;
+    border: 1px solid black;
+    width: 90%; 
+  }
+
+  .text{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 2%;
+ 
+  }
+
+  .comment-text{
+    margin-right: 2%;
+  }
+
+  .ul-comments-box{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto ;
+    padding: 2%;
+    border: 1px solid black;
+    width: 90%;
+  }

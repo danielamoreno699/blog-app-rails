@@ -1,22 +1,31 @@
 <h1>Post Details</h1>
 
-<div>
-  <ul>
-    <li>
-      <%= @post.id %>
-      <%= @post.Title %>
-      <%= @post.Text %>
-      Comments: <%= @post.CommentsCounter.nil? ? 0 : @post.CommentsCounter %>
-      Likes: <%= @post.LikesCounter.nil? ? 0 : @post.LikesCounter %>
-    </li>
-  </ul>
-</div>
+<html>
+  <head>
+    <%= stylesheet_link_tag 'one_post' %>
+  </head>
+  <body>
+    <div class="users-posts">
+      <div class="post">
+        <div class="text">
+          <p>Comments: <%= @post.CommentsCounter.nil? ? 0 : @post.CommentsCounter %></p>
+          <p>Likes: <%= @post.LikesCounter.nil? ? 0 : @post.LikesCounter %></p>
+        </div>
+        
+        <p>Title: <%= @post.Title %></p>
+        <p>Text: <%= @post.Text %></p>
+      </div>
+    </div>
 
-<ul>
-  <% @post.comments.each do |comment| %>
-    <li>
-      Username: <%= comment.Text %>
-    </li>
-  <% end %>
-</ul>
+    <ul class="ul-comments-box">
+    <h4>Section for Comments: </h4>
+      <% @post.comments.each do |comment| %>
+        
+        <li>
+          Username: <%= comment.Text %>
+        </li>
+      <% end %>
+    </ul>
+  </body>
+</html>
 
