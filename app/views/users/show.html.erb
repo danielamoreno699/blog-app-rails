@@ -1,0 +1,50 @@
+
+
+<html>
+  <head>
+    <%= stylesheet_link_tag 'users_styles' %>
+  </head>
+ 
+  <body>
+  <h1>Here is the User details</h1>
+
+  <div class="container-user">
+  <img src="" class="img-user-s">
+  <ul class="ul-user">
+    <li>User Name: <%= @user.name %></li>
+    <li>User Posts: <%= @user.post_counter %></li>
+  </ul>
+</div>
+
+<div class="user-bio">
+    <h4 class="bio-p"> Bio of <%= @user.name %></h4>
+    <p><%= @user.bio %></p>
+</div>
+
+
+
+<div class="users-posts">
+  <% @user.posts.each do |post| %>
+    <div class="post">
+      <h4><%= link_to post.Title, user_posts_path(user_id: @user.id) %></h4>
+
+      
+      <p><%= post.Text %></p>
+
+    <div class="text">
+    <p class="comment-text">Comments: <%= post.CommentsCounter.nil? ? 0 : post.CommentsCounter %></p>
+    <p>Likes: <%= post.LikesCounter.nil? ? 0 : post.LikesCounter %></p>
+    </div>
+     
+    </div>
+  <% end %>
+</div>
+
+
+</body>
+</html>
+
+
+
+
+

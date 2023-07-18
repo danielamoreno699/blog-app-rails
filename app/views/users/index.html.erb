@@ -1,0 +1,22 @@
+
+<html>
+  <head>
+    <%= stylesheet_link_tag 'users_styles' %>
+  </head>
+  <body>
+    <h1>Here is the list of all the Users</h1>
+
+    <div class="container-users">
+      <% @users.each do |user| %>
+        <div class="user-info">
+          <img src="" class="img-user">
+          <ul class="ul-users">
+            <li><%= link_to user.name, user_path(user) %></li>
+            <li>Number of posts: <%= link_to user.post_counter %></li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </body>
+</html>
+
