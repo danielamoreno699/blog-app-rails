@@ -20,20 +20,7 @@
 </div>
 
 <div class="users-posts">
-  <% @user.posts.each do |post| %>
-    <div class="post">
-      <h4><%= link_to post.Title, user_posts_path(user_id: @user.id),class: 'custom-link-s' %></h4>
-
-      
-      <p><%= post.Text %></p>
-
-    <div class="text">
-    <p class="comment-text">Comments: <%= post.CommentsCounter.nil? ? 0 : post.CommentsCounter %></p>
-    <p>Likes: <%= post.LikesCounter.nil? ? 0 : post.LikesCounter %></p>
-    </div>
-     
-    </div>
-  <% end %>
+    <%= render_user_posts(@user) %>
 </div>
 
 <button class="btn btn-primary">see all posts</button>
