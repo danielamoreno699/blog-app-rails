@@ -41,6 +41,7 @@
   .text-author {
     display: flex;
     flex-direction: row;
+    color: blue;
   }
   
   .by-author {

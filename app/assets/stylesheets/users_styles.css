@@ -62,3 +62,11 @@ h1 {
   .custom-link:hover {
     color: rgb(85, 52, 14); /* Change the color on hover */
   }
+
+  /* users availavle */
+  .users-available{
+    color: rgb(6, 44, 102);
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    text-align: center;
+  }

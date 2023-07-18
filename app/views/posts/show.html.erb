@@ -3,7 +3,7 @@
     <%= stylesheet_link_tag 'one_post' %>
   </head>
   <body>
-  <h1>Here is the details of the post ID  associated with User account</h1>
+  
     <div class="users-posts">
       <div class="post">
         <div class="text">
@@ -13,7 +13,7 @@
         
         <div class="text-author">
         <p>Title: <%= @post.Title %></p> 
-        <p class="by-author"> by: <%= @post.user.name %></p>
+        <p class="by-author">by: <%= @post.user.name %></p>
         </div>
 
         <p>Text: <%= @post.Text %></p>
@@ -21,7 +21,7 @@
     </div>
 
     <ul class="ul-comments-box">
-      <h4>Section for Comments: </h4>
+      <h4 class="section-comments">Section for Comments: </h4>
       <% if @post.comments.blank? %> 
         <li>no comments for the moment</li>
       <% else %>
