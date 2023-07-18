@@ -5,7 +5,7 @@
     <%= stylesheet_link_tag 'posts_styles' %>
   </head>
   <body>
-  <h1>Here is the List of posts associated with User account</h1>
+
 
     <div class="container-user">
       <img src="" class="img-user-s">
@@ -20,10 +20,7 @@
         <div class="post">
           <%= link_to post.Title, user_post_path(user_id: post.author_id, id: post.id) %>
           <p><%= post.Text %></p>
-          <div class="text">
-            <p class="comment-text">Comments: <%= post.CommentsCounter.nil? ? 0 : post.CommentsCounter %></p>
-            <p>Likes: <%= post.LikesCounter.nil? ? 0 : post.LikesCounter %></p>
-          </div>
+          <%= render_text_section(post) %>
         </div>
 
         <%= render_comments_section(post) %>
