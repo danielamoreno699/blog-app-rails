@@ -4,7 +4,7 @@
   </head>
  
   <body>
-  
+  <h1>Here is the User details</h1>
 
   <div class="container-user">
   <img src="" class="img-user-s">
@@ -20,15 +20,22 @@
 </div>
 
 <div class="users-posts">
-    <%= render_user_posts(@user) %>
-</div>
+  <% @user.posts.each do |post| %>
+    <div class="post">
+      <h4><%= link_to post.Title, user_posts_path(user_id: @user.id) %></h4>
 
-<button class="btn btn-primary">see all posts</button>
+      
+      <p><%= post.Text %></p>
+
+      <%= render_text_user_section(@user,post) %>
+     
+    </div>
+  <% end %>
+</div>
 
 
 </body>
 </html>
-
 
   
 
