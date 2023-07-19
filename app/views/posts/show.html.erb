@@ -1,11 +1,12 @@
-
-
 <html>
   <head>
-    # <%= stylesheet_link_tag 'one_post' %>
+    <%= stylesheet_link_tag 'one_post' %>
   </head>
   <body>
-  <h1>Here is the details of the post ID  associated with User account</h1>
-    
+
+  <%= render 'single_post' %>
+
+    <%= render_comments_section(@post) %>
+
   </body>
 </html>
