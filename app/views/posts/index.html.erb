@@ -10,17 +10,7 @@
   <%= render 'shared/container_user', user: @user %>
  
 
-    <div class="users-posts">
-      <% @user.posts.each do |post| %>
-        <div class="post">
-          <%= link_to post.Title, user_post_path(user_id: post.author_id, id: post.id), class: 'custom-link-s' %>
-          <p><%= post.Text %></p>
-          <%= render_text_section(post) %>
-        </div>
-
-        <%= render_comments_section(post) %>
-      <% end %>
-    </div>
+  <%= render 'posts_display' %>
 
     <button class="btn btn-primary">pagination</button>
   </body>
