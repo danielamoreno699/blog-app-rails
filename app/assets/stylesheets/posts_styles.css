@@ -106,9 +106,9 @@
   color: rgb(93, 93, 233);
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s; /* Add a smooth color transition on hover */
+  transition: color 0.3s;
 }
 
 .custom-link-s:hover {
-  color: darkblue; /* Change the color on hover */
+  color: darkblue; 
 }
