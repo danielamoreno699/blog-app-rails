@@ -81,7 +81,7 @@
 }
 
 /* button */
-.btn-primary {
+.btn {
   display: block;
   margin: 16px auto 16px auto;
   padding: 8px 16px;
@@ -93,11 +93,11 @@
   font-size: 14px;
 }
 
-.btn-primary:hover {
+.btn:hover {
   background-color: #0056b3;
 }
 
-.btn-primary:focus {
+.btn:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
 }

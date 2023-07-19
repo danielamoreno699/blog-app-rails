@@ -1,6 +1,7 @@
 <html>
   <head>
-    <%= stylesheet_link_tag 'users_styles' %>
+    <%= stylesheet_link_tag 'one_user' %>
+    
   </head>
  
   <body>
@@ -13,6 +14,10 @@
 </div>
 
 <%= render partial: 'shared/posts', locals: { posts: @user.posts } %>
+
+<div>
+    <button class="btn btn-primary">see more</button>
+</div>
 
 
 </body>
