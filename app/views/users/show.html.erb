@@ -4,28 +4,15 @@
   </head>
  
   <body>
-  <h1>Here is the User details</h1>
 
-  <%= render 'user_details' %>
+  <%= render 'shared/container_user', user: @user %>
 
 <div class="user-bio">
     <h4 class="bio-p"> Bio of <%= @user.name %></h4>
     <p><%= @user.bio %></p>
 </div>
 
-<div class="users-posts">
-  <% @user.posts.each do |post| %>
-    <div class="post">
-      <h4><%= link_to post.Title, user_posts_path(user_id: @user.id) %></h4>
-
-      
-      <p><%= post.Text %></p>
-
-      <%= render_text_user_section(@user,post) %>
-     
-    </div>
-  <% end %>
-</div>
+<%= render partial: 'shared/posts', locals: { posts: @user.posts } %>
 
 
 </body>
