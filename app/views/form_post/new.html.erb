@@ -1,45 +1,4 @@
+
 <h1>Create a New Form Post</h1>
 
-<%= form_with model: @form_post, url: form_posts_path, method: :post, local: true do |f| %>
-  <div>
-    <%= f.label :Title %>
-    <%= f.text_field :Title %>
-    <% if @form_post.errors[:Title].any? %>
-      <div class="error">
-        <%= @form_post.errors[:Title].first %>
-      </div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= f.label :Text %>
-    <%= f.text_area :Text, required: false %>
-    <% if @form_post.errors[:Text].any? %>
-      <div class="error">
-        <%= @form_post.errors[:Text].first %>
-      </div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= f.label :CommentsCounter %>
-    <%= f.number_field :CommentsCounter %>
-    <% if @form_post.errors[:CommentsCounter].any? %>
-      <div class="error">
-        <%= @form_post.errors[:CommentsCounter].first %>
-      </div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= f.label :LikesCounter %>
-    <%= f.number_field :LikesCounter %>
-    <% if @form_post.errors[:LikesCounter].any? %>
-      <div class="error">
-        <%= @form_post.errors[:LikesCounter].first %>
-      </div>
-    <% end %>
-  </div>
-
-  <%= f.submit 'Create Form Post' %>
-<% end %>
+<%= render partial: "form_post/form", locals: { post: @post } %>
