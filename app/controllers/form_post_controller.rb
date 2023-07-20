@@ -1,4 +1,4 @@
-class FormPostsController < ApplicationController
+class FormPostController < ApplicationController
     def new
       @current_user = current_user
       @post = Post.new
