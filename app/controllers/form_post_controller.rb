@@ -1,7 +1,10 @@
 class FormPostController < ApplicationController
     def new
       @current_user = current_user
-      @post = Post.new
+      @form_post = Post.new
+      respond_to do |format|
+        format.html { render :new, locals: { form_post: @form_post } }
+      end
     end
   
     def create
