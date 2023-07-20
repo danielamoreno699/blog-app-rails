@@ -12,7 +12,7 @@
   <%= form_with model: @post, url: form_posts_path, method: :post, data: { turbo_frame: "new" } do |f| %>
 
     <div class="form-group">
-      <%= f.label :Title, "insert a title" %>
+      <%= f.label :Title, "Insert a title" %>
       <%= f.text_field :Title, class: 'form-control' %>
       <% if @post.errors[:Title].any? %>
         <div class="error">
@@ -22,7 +22,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :Text, "insert a text" %>
+      <%= f.label :Text, "Insert a text" %>
       <%= f.text_area :Text, required: false, class: 'form-control' %>
       <% if @post.errors[:Text].any? %>
         <div class="error">
@@ -32,7 +32,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :CommentsCounter, "number of comments" %>
+      <%= f.label :CommentsCounter, "Number of comments" %>
       <%= f.number_field :CommentsCounter, class: 'form-control' %>
       <% if @post.errors[:CommentsCounter].any? %>
         <div class="error">
@@ -42,7 +42,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :LikesCounter, "number of likes" %>
+      <%= f.label :LikesCounter, "Number of likes" %>
       <%= f.number_field :LikesCounter, class: 'form-control' %>
       <% if @post.errors[:LikesCounter].any? %>
         <div class="error">
