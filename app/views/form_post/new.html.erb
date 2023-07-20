@@ -2,3 +2,13 @@
 <h1>Create a New Form Post</h1>
 
 <%= render partial: "form_post/form", locals: { post: @post } %>
+
+<% if flash[:success] %>
+  <div class="flash-success">
+    <%= flash[:success] %>
+  </div>
+<% elsif flash[:alert] %>
+  <div class="flash-alert">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
