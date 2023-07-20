@@ -1,13 +1,52 @@
-.flash-success {
-    background-color: #dff0d8;
-    color: #3c763d;
-    border: 1px solid #3c763d;
-    padding: 10px;
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px; 
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    background-color: rgb(185, 201, 230);
+    padding: 20px;
+    border-radius: 10px; 
+  }
+  .h3-form-post{
+    color: rgb(6, 44, 102);
+    margin-bottom: 20px;
+    
+  }
+
+  .form-group label {
+    font-weight: bold;
+    color: #333; /* Text color for labels */
+    margin-bottom: 5px; /* Space between label and form control */
   }
   
-  .flash-alert {
-    background-color: #f2dede;
-    color: #a94442;
-    border: 1px solid #a94442;
-    padding: 10px;
+
+.form-group {
+    margin-bottom: 10px;
+
+  }
+  
+  /* Style for form control elements */
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Style for error messages */
+  .error {
+    color: red;
+    margin-top: 5px;
   }
