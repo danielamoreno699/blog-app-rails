@@ -113,13 +113,13 @@
   color: darkblue;
 }
 
-/*like counter*/
+/* like counter */
 .like-counter {
   padding: 15px 2px;
   color: red;
 }
 
-.like-counter-number{
+.like-counter-number {
   padding: 15px 4px;
   color: red;
 }
