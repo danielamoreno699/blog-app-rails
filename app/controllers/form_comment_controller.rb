@@ -19,7 +19,7 @@ class FormCommentController < ApplicationController
 
         if @comment.save
             flash[:success] = "Comment was successfully created."
-            redirect_to users_path
+            redirect_to user_post_path(@post.author_id, @post.id)
           else
             flash.now[:alert] = "Error: Comment could not be created."
             render :new

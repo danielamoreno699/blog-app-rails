@@ -8,6 +8,10 @@
 
     <%= render_comments_section(@post) %>
 
+    <button class="btn btn-primary">
     <%= link_to "Add a Comment", new_form_comment_path(post_id: @post.id) %>
+    </button>
+
+    <%= render_flash_messages %>
   </body>
 </html>

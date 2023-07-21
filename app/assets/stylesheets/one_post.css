@@ -47,3 +47,20 @@
 .by-author {
   margin-left: 1%;
 }
+
+
+/* message */
+
+.flash-success {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #3c763d;
+  padding: 10px;
+}
+
+.flash-alert {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #a94442;
+  padding: 10px;
+}
