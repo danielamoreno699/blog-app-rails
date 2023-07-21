@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
     get '/form_comment/new', to: 'form_comment#new', as: 'new_form_comment'
     post '/form_comment', to: 'form_comment#create', as: 'form_comments'
+
+    post '/likes/increment/:id', to: 'likes#increment', as: 'increment_likes'
+
+
   # Defines the root path route ("/")
   # root "articles#index"
 end

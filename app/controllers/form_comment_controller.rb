@@ -11,6 +11,7 @@ class FormCommentController < ApplicationController
     def create
         @current_user = current_user
         @post = Post.find(params[:comment][:post_id])
+
         @comment = Comment.new(comment_params)
         @comment.author_id = @current_user.id
         @comment.post_id = @post.id
@@ -19,7 +20,7 @@ class FormCommentController < ApplicationController
 
         if @comment.save
             flash[:success] = "Comment was successfully created."
-            redirect_to user_post_path(@post.author_id, @post.id)
+            redirect_to user_post_path(@current_user.id, @post.id)
           else
             flash.now[:alert] = "Error: Comment could not be created."
             render :new

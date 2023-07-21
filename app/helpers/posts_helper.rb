@@ -1,11 +1,13 @@
 module PostsHelper
   def render_text_section(post)
     content_tag(:div, class: 'text') do
-      concat content_tag(:p, "Comments: #{post.CommentsCounter.nil? ? 0 : post.CommentsCounter}",
-                         class: 'comment-text')
-      concat content_tag(:p, "Likes: #{post.LikesCounter.nil? ? 0 : post.LikesCounter}")
+      concat content_tag(:p, "Comments: #{post.CommentsCounter.nil? ? 0 : post.CommentsCounter}", class: 'comment-text')
+      concat link_to 'Like', increment_likes_path(post), method: :post, remote: true do
+        content_tag(:p, "Likes: #{post.LikesCounter.nil? ? 0 : post.LikesCounter}", class: 'like-counter')
+      end
     end
   end
+  
 
   def render_comments_section(post)
     content_tag(:ul, class: 'ul-comments-box') do

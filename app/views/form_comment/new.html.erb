@@ -13,7 +13,7 @@
     <%= f.hidden_field :post_id, value: @post.id %>
 
     <div class="form-group">
-      <%= f.label :Text, "Insert a text" %>
+      <%= f.label :Text, "Insert a text for the comment section" %>
       <%= f.text_area :Text, required: false, class: 'form-control' %>
       <% if @comment.errors[:Text].any? %>
         <div class="error">
