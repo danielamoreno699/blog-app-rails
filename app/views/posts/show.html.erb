@@ -8,5 +8,6 @@
 
     <%= render_comments_section(@post) %>
 
+    <%= link_to "Add a Comment", new_form_comment_path(post_id: @post.id) %>
   </body>
 </html>

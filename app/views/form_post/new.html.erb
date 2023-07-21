@@ -11,6 +11,9 @@
 <h3 class="h3-form-post">Create a new Post</h3>
   <%= form_with model: @post, url: form_posts_path, method: :post, data: { turbo_frame: "new" } do |f| %>
 
+
+    <%= f.hidden_field :post_id, value: @post.id %>
+
     <div class="form-group">
       <%= f.label :Title, "Insert a title" %>
       <%= f.text_field :Title, class: 'form-control' %>
@@ -50,6 +53,8 @@
         </div>
       <% end %>
     </div>
+
+    
 
     <%= f.submit 'Create Form Post', class: 'btn btn-primary' %>
   <% end %>
