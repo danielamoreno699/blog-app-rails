@@ -1,12 +1,10 @@
 class LikesController < ApplicationController
+  def increment
+    @post = Post.find(params[:id])
+    @like = Like.create(post: @post, user: current_user)
 
-    def increment
-      @post = Post.find(params[:id])
-      @like = Like.new(user_id: current_user.id, post_id: @post.id)
-      @like.save
-      respond_to do |format|
-        format.js
-      end
+    respond_to do |format|
+      format.js { render :increment }
     end
   end
-  
+end
