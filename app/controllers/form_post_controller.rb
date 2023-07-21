@@ -11,6 +11,8 @@ class FormPostController < ApplicationController
     @current_user = current_user
     @post = Post.new(post_params)
     @post.author_id = @current_user.id
+    @post.CommentsCounter = 0
+    @post.LikesCounter = 0
 
     if @post.save
       flash[:success] = "Post was successfully created."
@@ -24,6 +26,6 @@ class FormPostController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:Title, :Text, :CommentsCounter, :LikesCounter)
+    params.require(:post).permit(:Title, :Text)
   end
 end
