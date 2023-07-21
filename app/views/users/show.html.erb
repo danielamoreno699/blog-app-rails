@@ -8,6 +8,10 @@
 
   <%= render 'shared/container_user', user: @user %>
 
+  <button class="btn btn-primary">
+    <%= link_to "Add a post", new_form_post_path() %>
+    </button>
+
 <div class="user-bio">
     <h4 class="bio-p"> Bio of <%= @user.name %></h4>
     <p><%= @user.bio %></p>
@@ -16,7 +20,9 @@
 <%= render partial: 'shared/posts', locals: { posts: @user.posts } %>
 
 <div>
-    <button class="btn btn-primary">see more</button>
+    <button class="btn btn-primary">
+    <%= link_to 'See all Post', user_posts_path(@user), class: 'custom-link-s' %>
+    </button>
 </div>
 
 

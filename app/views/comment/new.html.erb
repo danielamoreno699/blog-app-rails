@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <%= stylesheet_link_tag 'post_form' %>
+  </head>
+  <body>
+
+<div class="wrapper"> 
+<div class="form-container">
+<h3 class="h3-form-post">Create a new comment</h3>
+  <%= form_with model: @comment, url: form_comments_path, method: :post, data: { turbo_frame: "new" } do |f| %>
+
+
+    <%= f.hidden_field :post_id, value: @post.id %>
+
+    <div class="form-group">
+      <%= f.label :Text, "Insert a text for the comment section" %>
+      <%= f.text_area :Text, required: false, class: 'form-control' %>
+      <% if @comment.errors[:Text].any? %>
+        <div class="error">
+          <%= @comment.errors[:Text].first %>
+        </div>
+      <% end %>
+    </div>
+
+    <%= f.submit 'Create comment Post', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+</div>
+</body>
+</html>

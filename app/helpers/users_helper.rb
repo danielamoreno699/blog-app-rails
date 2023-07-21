@@ -6,4 +6,12 @@ module UsersHelper
       concat content_tag(:p, "Likes: #{post.LikesCounter.nil? ? 0 : post.LikesCounter}")
     end
   end
+
+  def render_flash_messages
+    if flash[:success]
+      content_tag(:div, flash[:success], class: 'flash-success')
+    elsif flash[:alert]
+      content_tag(:div, flash[:alert], class: 'flash-alert')
+    end
+  end
 end

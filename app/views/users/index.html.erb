@@ -1,3 +1,5 @@
+<%  UsersHelper %>
+
 <html>
   <head>
     <%= stylesheet_link_tag 'users_styles' %>
@@ -6,7 +8,12 @@
 
   <h2 class="users-available">Users available</h2>
 
+  <%= render_flash_messages %>
+
   <%= render 'users_display' %>
+
+  
+
   </body>
 </html>
 
