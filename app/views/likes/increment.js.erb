@@ -1,7 +1,0 @@
-const postId = <%= @post.id %>;
-const likesCounterSpan = document.querySelector(`#like-counter-${postId}`);
-const likeLink = document.querySelector(`#like-link-${postId}`);
-
-likeLink.innerText = "Likes: ";
-likesCounterSpan.innerText = <%= @post.LikesCounter %>;
-
