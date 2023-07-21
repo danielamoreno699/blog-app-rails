@@ -1,4 +1,4 @@
-class FormCommentController < ApplicationController
+class CommentController < ApplicationController
   def new
     @current_user = current_user
     @post = Post.find(params[:post_id])
