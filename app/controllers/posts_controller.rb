@@ -12,10 +12,4 @@ class PostsController < ApplicationController
       format.json { render json: @post }
     end
   end
-
-  def increment_likes
-    @post = Post.find(params[:id])
-    @post.increment!(:LikesCounter)
-    redirect_to user_post_path(@post.author_id, @post.id)
-  end
 end

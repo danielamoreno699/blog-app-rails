@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get '/form_comment/new', to: 'form_comment#new', as: 'new_form_comment'
     post '/form_comment', to: 'form_comment#create', as: 'form_comments'
 
-    get '/posts/:id/increment_likes', to: 'posts#increment_likes', as: 'increment_likes'
+    get '/likes/:id/create', to: 'likes#create', as: 'increment_likes'
 
 
 
