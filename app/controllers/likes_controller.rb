@@ -1,5 +1,4 @@
 class LikesController < ApplicationController
-
   def create
     @post = Post.find(params[:id])
     @post.increment!(:LikesCounter)
