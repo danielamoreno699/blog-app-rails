@@ -66,6 +66,14 @@ RSpec.describe "User Posts", type: :system do
           expect(page).to have_content(post.LikesCounter)
         end
 
+        it "redirects to post show page when clicking on post title" do
+          post = Post.create(Title: "My First Post", Text: "This is my first post", author_id: user.id, CommentsCounter: 0, LikesCounter: 0)
+          visit user_posts_path(user_id: user.id)
+          click_link post.Title
+          expect(page).to have_current_path(user_post_path(user_id: user.id, id: post.id))
+        end
+      
+
 
 
   # Add more test scenarios as needed
