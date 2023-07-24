@@ -17,7 +17,8 @@ module PostsHelper
         concat content_tag(:li, 'no comments for the moment')
       else
         post.recent_comments.each do |comment|
-          concat content_tag(:li, "#{comment.user.name}: #{comment.Text.blank? ? 'no comments for the moment' : comment.Text}")
+          concat content_tag(:li,
+                             "#{comment.user.name}: #{comment.Text.blank? ? 'no comments for the moment' : comment.Text}")
         end
       end
     end
