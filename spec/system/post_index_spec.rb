@@ -1,5 +1,4 @@
 # spec/system/user_posts_spec.rb
-
 require 'rails_helper'
 
 RSpec.describe 'Post Index', type: :system do
@@ -11,7 +10,6 @@ RSpec.describe 'Post Index', type: :system do
 
   it "displays the user's profile picture on user posts page" do
     visit user_posts_path(user_id: user.id)
-
 
     expect(page).to have_css("img[src='#{user.photo}']")
   end
@@ -43,7 +41,6 @@ RSpec.describe 'Post Index', type: :system do
 
     expect(page).to have_content(post.Text)
   end
-
 
   it 'displays the first comments on a post' do
     post = Post.create(Title: 'My First Post', Text: 'This is my first post', author_id: user.id, CommentsCounter: 0,
@@ -79,9 +76,5 @@ RSpec.describe 'Post Index', type: :system do
     click_link post.Title
     expect(page).to have_current_path(user_post_path(user_id: user.id, id: post.id))
   end
-
-
-
-
   # Add more test scenarios as needed
 end
