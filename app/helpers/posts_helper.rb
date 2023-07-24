@@ -9,6 +9,7 @@ module PostsHelper
     end
   end
 
+  # app/helpers/posts_helper.rb
   def render_comments_section(post)
     content_tag(:ul, class: 'ul-comments-box') do
       concat content_tag(:h4, 'Section for Comments:', class: 'section-comments')
@@ -18,7 +19,7 @@ module PostsHelper
       else
         post.recent_comments.each do |comment|
           concat content_tag(:li,
-                             "#{comment.user.name}: #{comment.Text.blank? ? 'no comments for the moment' : comment.Text}")
+                             "#{comment.user.name}: #{comment.Text.blank? ? 'no comments' : comment.Text}")
         end
       end
     end
