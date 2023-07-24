@@ -50,6 +50,22 @@ RSpec.describe "User Posts", type: :system do
       expect(page).to have_content(comment.Text)
     end
 
+    it "displays the number of comments on a post" do
+      post = Post.create(Title: "My First Post", Text: "This is my first post", author_id: user.id, CommentsCounter: 0, LikesCounter: 0)
+      comment = Comment.create(Text: "This is my first comment", author_id: user.id, post_id: post.id)
+      visit user_posts_path(user_id: user.id)
+        
+        expect(page).to have_content(post.CommentsCounter)
+      end
+
+      it "displays the number of likes on a post" do
+        post = Post.create(Title: "My First Post", Text: "This is my first post", author_id: user.id, CommentsCounter: 0, LikesCounter: 0)
+        like = Like.create(author_id: user.id, post_id: post.id)
+        visit user_posts_path(user_id: user.id)
+          
+          expect(page).to have_content(post.LikesCounter)
+        end
+
 
 
   # Add more test scenarios as needed
