@@ -13,4 +13,31 @@ RSpec.describe "Post Show", type: :system do
     visit user_post_path(user_id: user.id, id: post.id)
     expect(page).to have_content(post.Title)
   end
+
+  it "displays who wrote the post" do
+    visit user_post_path(user_id: user.id, id: post.id)
+    expect(page).to have_content(user.name)
+  end
+
+  it "displays how many comments the post has" do
+    visit user_post_path(user_id: user.id, id: post.id)
+    expect(page).to have_content(post.CommentsCounter)
+  end
+
+  it "displays how many likes the post has" do
+    visit user_post_path(user_id: user.id, id: post.id)
+    expect(page).to have_content(post.LikesCounter)
+  end
+
+  it "displays the post text" do
+    visit user_post_path(user_id: user.id, id: post.id)
+    expect(page).to have_content(post.Text)
+  end
+
+  it "displays the user name commentor" do
+    visit user_post_path(user_id: user.id, id: post.id)
+    expect(page).to have_content(comment.user.name)
+  end
+
+
 end
