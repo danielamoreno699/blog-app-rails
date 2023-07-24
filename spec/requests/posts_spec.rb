@@ -20,8 +20,6 @@ RSpec.describe '/users/posts', type: :request do
     )
   end
 
-
-
   context 'GET /index' do
     it 'renders a list of a user\'s posts' do
       get '/users/1/posts'
