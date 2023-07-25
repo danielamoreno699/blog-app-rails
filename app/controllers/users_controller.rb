@@ -36,6 +36,17 @@ class UsersController < ApplicationController
     
   end
 
+  def login 
+    @user = User.find_by(name: params[:name])
+    if @user
+      session[:user_id] = @user.id
+      redirect_to user_path(@user.id)
+    else
+      flash[:alert] = 'User not found.'
+      redirect_to users_path
+    end
+  end
+
   private
   
     def user_params
