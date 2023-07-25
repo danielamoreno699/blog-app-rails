@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  
+  before_action :authenticate_user!, except: [:index]
+
   def index
     @users = User.all
     
@@ -22,36 +22,4 @@ class UsersController < ApplicationController
     end
   end
 
-  def create
-    @user = User.new(user_params)
-    @user.post_counter = 0
-    
-    
-    if @user.save
-      flash[:success] = 'New User was successfully created.'
-      redirect_to users_path
-    else
-      flash.now[:alert] = 'Error: User could not be created.'
-      render :new
-    end
-
-    
-  end
-
-  def login 
-    @user = User.find_by(name: params[:name])
-    if @user
-      session[:user_id] = @user.id
-      redirect_to user_path(@user.id)
-    else
-      flash[:alert] = 'User not found.'
-      redirect_to users_path
-    end
-  end
-
-  private
-  
-    def user_params
-      params.require(:user).permit(:name, :photo, :bio )
-    end
 end
