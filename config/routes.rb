@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :current_users
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # get '/registrations', to: 'devise/registrations#new', as: 'new_user_registration'
-  # post '/registrations', to: 'devise/registrations#create', as: 'user_registration'
+  devise_for :current_users
     
 
     root 'users#index'
