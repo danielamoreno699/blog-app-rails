@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  has_secure_password
+  #has_secure_password
 
   validates :name, presence: true
   validates :post_counter, comparison: { greater_than_or_equal_to: 0 }
