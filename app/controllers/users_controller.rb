@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def new 
     @user = User.new
     respond_to do |format|
-      format.html { render :new, locals: { post: @post } }
+      format.html { render :new, locals: { user: @user } }
     end
   end
 
