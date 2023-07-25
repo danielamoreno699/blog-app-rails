@@ -1,6 +1,8 @@
 class User < ApplicationRecord
 
-  #has_secure_password
+
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+ 
 
   validates :name, presence: true
   validates :post_counter, comparison: { greater_than_or_equal_to: 0 }
