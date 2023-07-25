@@ -15,6 +15,9 @@ class UsersController < ApplicationController
 
   def new 
     @user = User.new
+    respond_to do |format|
+      format.html { render :new, locals: { post: @post } }
+    end
   end
 
   def create
@@ -30,7 +33,7 @@ class UsersController < ApplicationController
       render :new
     end
 
-    redirect_to users_path
+    
   end
 
   private
