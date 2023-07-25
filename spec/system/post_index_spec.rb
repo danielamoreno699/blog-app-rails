@@ -1,4 +1,3 @@
-# spec/system/user_posts_spec.rb
 require 'rails_helper'
 
 RSpec.describe 'Post Index', type: :system do
@@ -6,7 +5,14 @@ RSpec.describe 'Post Index', type: :system do
     driven_by(:rack_test)
   end
 
-  user = User.create(name: 'John Doe', photo: 'https://short.url/example', post_counter: 5)
+  let!(:user) { User.create(name: 'Alice', photo: 'https://example.com/alice.jpg', post_counter: 3) }
+
+  let!(:post1) do
+    Post.create(Title: 'My First Post', Text: 'This is my first post', author_id: user.id, CommentsCounter: 0,
+                LikesCounter: 0)
+  end
+
+  let!(:comment1) { Comment.create(Text: 'This is my first comment', author_id: user.id, post_id: post1.id) }
 
   it "displays the user's profile picture on user posts page" do
     visit user_posts_path(user_id: user.id)
@@ -20,61 +26,46 @@ RSpec.describe 'Post Index', type: :system do
     expect(page).to have_content(user.name)
   end
 
-  it "displays the user's post count on user posts page" do
+  it 'displays users post count on user post page' do
+    user = User.create(name: 'Alice', photo: 'https://example.com/alice.jpg', post_counter: 3)
     visit user_posts_path(user_id: user.id)
-
     expect(page).to have_content(user.post_counter)
   end
 
   it 'displays a post title on user posts page' do
-    post = Post.create(Title: 'My First Post', Text: 'This is my first post', author_id: user.id, CommentsCounter: 0,
-                       LikesCounter: 0)
     visit user_posts_path(user_id: user.id)
 
-    expect(page).to have_content(post.Title)
+    expect(page).to have_content(post1.Title)
   end
 
   it 'displays a post text on user posts page' do
-    post = Post.create(Title: 'My First Post', Text: 'This is my first post', author_id: user.id, CommentsCounter: 0,
-                       LikesCounter: 0)
     visit user_posts_path(user_id: user.id)
 
-    expect(page).to have_content(post.Text)
+    expect(page).to have_content(post1.Text)
   end
 
+
   it 'displays the first comments on a post' do
-    post = Post.create(Title: 'My First Post', Text: 'This is my first post', author_id: user.id, CommentsCounter: 0,
-                       LikesCounter: 0)
-    comment = Comment.create(Text: 'This is my first comment', author_id: user.id, post_id: post.id)
     visit user_posts_path(user_id: user.id)
 
-    expect(page).to have_content(comment.Text)
+    expect(page).to have_content(comment1.Text)
   end
 
   it 'displays the number of comments on a post' do
-    post = Post.create(Title: 'My First Post', Text: 'This is my first post', author_id: user.id, CommentsCounter: 0,
-                       LikesCounter: 0)
-    Comment.create(Text: 'This is my first comment', author_id: user.id, post_id: post.id)
     visit user_posts_path(user_id: user.id)
 
-    expect(page).to have_content(post.CommentsCounter)
+    expect(page).to have_content(post1.CommentsCounter)
   end
 
   it 'displays the number of likes on a post' do
-    post = Post.create(Title: 'My First Post', Text: 'This is my first post', author_id: user.id,
-                       CommentsCounter: 0, LikesCounter: 0)
-    Like.create(author_id: user.id, post_id: post.id)
     visit user_posts_path(user_id: user.id)
 
-    expect(page).to have_content(post.LikesCounter)
+    expect(page).to have_content(post1.LikesCounter)
   end
 
   it 'redirects to post show page when clicking on post title' do
-    post = Post.create(Title: 'My First Post', Text: 'This is my first post', author_id: user.id,
-                       CommentsCounter: 0, LikesCounter: 0)
     visit user_posts_path(user_id: user.id)
-    click_link post.Title
-    expect(page).to have_current_path(user_post_path(user_id: user.id, id: post.id))
+    click_link post1.Title
+    expect(page).to have_current_path(user_post_path(user_id: user.id, id: post1.id))
   end
-  # Add more test scenarios as needed
 end
