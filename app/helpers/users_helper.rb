@@ -18,6 +18,14 @@ module UsersHelper
   def user_photo_tag(user)
     if user.photo.present?
       image_tag(user.photo, class: 'img-user')
+    else
+      image_tag('default_image.png', class: 'img-user')
     end
   end
+
+  # def user_photo_tag(user)
+  #   if user.photo.present?
+  #     image_tag(user.photo, class: 'img-user')
+  #   end
+  # end
 end
