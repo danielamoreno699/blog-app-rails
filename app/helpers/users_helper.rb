@@ -23,9 +23,4 @@ module UsersHelper
     end
   end
 
-  # def user_photo_tag(user)
-  #   if user.photo.present?
-  #     image_tag(user.photo, class: 'img-user')
-  #   end
-  # end
 end
