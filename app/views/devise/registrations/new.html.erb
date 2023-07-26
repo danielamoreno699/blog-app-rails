@@ -21,7 +21,7 @@
 
   <div class="field">
     <%= f.label :photo  %><span class="optional-text">(Optional)</span><br />
-    <%= f.file_field :photo, autofocus: true, autocomplete: "photo" %>
+    <%= f.file_field :photo, autofocus: true, autocomplete: "photo" ,class: "input-photo" %>
   </div>
 
   <div class="field">
@@ -50,7 +50,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "sign-up-btn" %>
   </div>
 <% end %>
 

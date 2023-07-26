@@ -24,6 +24,10 @@
   margin-bottom: 20px;
 }
 
+.field{
+  margin-bottom: 20px;
+}
+
 .form-group label {
   font-weight: bold;
   color: #333; /* Text color for labels */
@@ -34,7 +38,7 @@
   margin-bottom: 10px;
 }
 
-.form-group input {
+.form-group input:not(.exclude-style) {
   width: 300px;
   margin: 0 auto;
     padding: 20px;
@@ -55,4 +59,27 @@
 .error {
   color: red;
   margin-top: 5px;
+}
+
+.login-button, .sign-up-btn {
+  background-color: #007bff; 
+  color: #fff;
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+.login-button:hover, .sign-up-btn:hover {
+  background-color: #0056b3; 
+}
+
+
+.input-photo {
+  /* Add your custom styles for the input field with the input-photo class */
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* Add more styles as needed */
 }
