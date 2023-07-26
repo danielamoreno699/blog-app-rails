@@ -21,7 +21,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(:email, :password, :password_confirmation, :name, :bio, :post_counter)
   end
 
+  protected
 
+  def after_sign_up_path_for(resource)
+    new_user_session_path
+  end
+
+  def sign_out_user
+    sign_out(current_user) if user_signed_in?
+    redirect_to root_path
+  end
 
   # GET /resource/edit
   # def edit

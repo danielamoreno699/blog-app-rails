@@ -1,34 +1,28 @@
 Rails.application.routes.draw do
- 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'users#index'
 
-  devise_for :users, controllers: {
-  registrations: 'users/registrations'
-}
+  namespace :users do
+    resources :posts, only: [:index, :show]
+    # Other user-related routes can go here
+  end
 
-    #devise_for :users
-    
+  resources :users, only: [:index, :show]
 
-    root 'users#index'
-    get '/users/:user_id/posts', to: 'posts#index', as: 'user_posts'
+  get '/posts/new', to: 'posts#new', as: 'new_form_post'
+  post '/posts', to: 'posts#create', as: 'form_posts'
+  get '/comment/new', to: 'comment#new', as: 'new_form_comment'
+  post '/comment', to: 'comment#create', as: 'form_comments'
+  get '/likes/:id/create', to: 'likes#create', as: 'increment_likes'
 
-    get '/users/:user_id/posts/:id', to: 'posts#show', as: 'user_post'
-    get '/users', to: 'users#index', as: 'users'
-    get '/users/:id', to: 'users#show', as: 'user'
+  # Customizing Devise paths
+  devise_for :users, path: 'auth', path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    registration: 'register'
+  }, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
 
- 
-
-    get '/posts/new', to: 'posts#new', as: 'new_form_post'
-    post '/posts', to: 'posts#create', as: 'form_posts'
-
-    get '/comment/new', to: 'comment#new', as: 'new_form_comment'
-    post '/comment', to: 'comment#create', as: 'form_comments'
-
-    get '/likes/:id/create', to: 'likes#create', as: 'increment_likes'
-
-
-
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # Other routes...
 end
