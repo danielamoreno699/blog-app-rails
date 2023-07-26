@@ -1,12 +1,31 @@
 Rails.application.routes.draw do
-  root 'users#index'
+ 
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  namespace :users do
-    resources :posts, only: [:index, :show]
-    # Other user-related routes can go here
-  end
+#   devise_for :users, controllers: {
+#   registrations: 'users/registrations',
+#   sessions: 'users/sessions'
 
-  resources :users, only: [:index, :show]
+# }
+
+
+    devise_for :users
+    
+   
+    root 'users#index'
+    # resources :users, only: [:index, :show] do
+    #   resources :posts, only: [:index, :show, :new, :create] do
+    #     resources :comments, only: [:new, :create]
+    #     resources :likes, only: [:new, :create]
+    #   end
+    # end
+    get '/users/:user_id/posts', to: 'posts#index', as: 'user_posts'
+
+    get '/users/:user_id/posts/:id', to: 'posts#show', as: 'user_post'
+    get '/users', to: 'users#index', as: 'users'
+    get '/users/:id', to: 'users#show', as: 'user'
+
+ 
 
   get '/posts/new', to: 'posts#new', as: 'new_form_post'
   post '/posts', to: 'posts#create', as: 'form_posts'
@@ -14,15 +33,9 @@ Rails.application.routes.draw do
   post '/comment', to: 'comment#create', as: 'form_comments'
   get '/likes/:id/create', to: 'likes#create', as: 'increment_likes'
 
-  # Customizing Devise paths
-  devise_for :users, path: 'auth', path_names: {
-    sign_in: 'login',
-    sign_out: 'logout',
-    registration: 'register'
-  }, controllers: {
-    registrations: 'users/registrations',
-    sessions: 'users/sessions'
-  }
 
-  # Other routes...
+
+
+  # Defines the root path route ("/")
+  # root "articles#index"
 end
