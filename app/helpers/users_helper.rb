@@ -22,5 +22,4 @@ module UsersHelper
       image_tag('default_image.png', class: 'img-user')
     end
   end
-
 end

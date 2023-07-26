@@ -76,10 +76,10 @@
 
 
 .input-photo {
-  /* Add your custom styles for the input field with the input-photo class */
+ 
   width: 300px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  /* Add more styles as needed */
+ 
 }
