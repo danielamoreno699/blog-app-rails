@@ -4,10 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
-  def after_sign_up_path_for(resource)
-    # Replace 'log_form_path' with the actual path to your log form page
-    new_user_session_path
-  end
+ 
   # GET /resource/sign_up
   def new
     super
@@ -21,8 +18,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
     end
 
-  def sign_up_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :name, :bio, :post_counter)
+  # def sign_up_params
+  #   params.require(:user).permit(:email, :password, :password_confirmation, :name, :bio, :post_counter)
+  # end
+
+  def after_sign_up_path_for(resource)
+    new_user_session_path
   end
 
 
