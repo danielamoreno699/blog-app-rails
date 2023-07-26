@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  devise_for :current_users
+      #devise_for :current_users
     
 
     root 'users#index'
@@ -12,11 +13,7 @@ Rails.application.routes.draw do
     get '/users', to: 'users#index', as: 'users'
     get '/users/:id', to: 'users#show', as: 'user'
 
-    devise_for :users, path: 'auth', path_names: {
-      sign_in: 'login',
-      sign_out: 'logout',
-      sign_up: 'register'
-    }
+ 
 
     get '/posts/new', to: 'posts#new', as: 'new_form_post'
     post '/posts', to: 'posts#create', as: 'form_posts'

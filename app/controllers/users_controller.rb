@@ -14,12 +14,4 @@ class UsersController < ApplicationController
     end
   end
 
-
-  def new 
-    @user = User.new
-    respond_to do |format|
-      format.html { render :new, locals: { user: @user } }
-    end
-  end
-
 end
