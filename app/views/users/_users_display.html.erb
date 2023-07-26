@@ -1,13 +1,16 @@
+include UsersHelper
+
 <div class="container-users">
   <% @users.each do |user| %>
     <%= link_to user_path(user) do %>
-    <div class="user-info">
-        <%= image_tag(user.photo, class: 'img-user') %>
-      <% end %>
+      <div class="user-info">
+        <%= user_photo_tag(user) %>
+      </div>
       <ul class="ul-users">
         <li><%= link_to user.name, user_path(user), class: 'custom-link' %></li>
         <li>Number of posts: <%= user.post_counter %></li>
       </ul>
-    </div>
+    <% end %>
   <% end %>
 </div>
+
