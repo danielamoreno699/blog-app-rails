@@ -28,22 +28,34 @@
   margin-bottom: 20px;
 }
 
-.form-group label {
-  font-weight: bold;
-  color: #333; /* Text color for labels */
-  margin-bottom: 5px; /* Space between label and form control */
+.form-group-post{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
-.form-group {
+.form-group-post input, textarea{
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #333; 
+  margin-bottom: 5px; 
+}
+
+.form-group{
   margin-bottom: 10px;
 }
 
 .form-group input:not(.exclude-style) {
   width: 300px;
   margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-      border-radius: 5px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 /* Style for form control elements */
