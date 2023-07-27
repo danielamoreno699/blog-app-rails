@@ -24,14 +24,39 @@
   margin-bottom: 20px;
 }
 
+.field {
+  margin-bottom: 20px;
+}
+
+.form-group-post {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-group-post input,
+textarea {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 300px;
+}
+
 .form-group label {
   font-weight: bold;
-  color: #333; /* Text color for labels */
-  margin-bottom: 5px; /* Space between label and form control */
+  color: #333;
+  margin-bottom: 5px;
 }
 
 .form-group {
   margin-bottom: 10px;
+}
+
+.form-group input:not(.exclude-style) {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 /* Style for form control elements */
@@ -47,4 +72,26 @@
 .error {
   color: red;
   margin-top: 5px;
+}
+
+.login-button,
+.sign-up-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-button:hover,
+.sign-up-btn:hover {
+  background-color: #0056b3;
+}
+
+.input-photo {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }

@@ -1,5 +1,6 @@
 <div class="container-user">
-<img src= "<%= user.photo %>" class="img-user" alt="user.photo">
+
+<%= user_photo_tag(user) %>
 <ul class="ul-user">
   <li>User Name: <%= @user.name %></li>
   <li>User Posts: <%= @user.post_counter %></li>

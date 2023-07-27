@@ -44,18 +44,18 @@
 </details> -->
 
 <details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://www.ruby-lang.org">Ruby</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
+<summary>Backend</summary>
   <ul>
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
+  <ul>
+    <li><a href="https://www.ruby.org/">Ruby on Rails</a></li>
+  </ul>
+  <ul>
+    <li><a href="https://www.rubyonrails.org/">Ruby on Rails</a></li>
+  </ul>
 </details>
+
 
 <!-- Features -->
 
@@ -73,14 +73,15 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-Ensure you have Ruby installed on your system. You can check by running the code below in your terminal.
-```sh
-  ruby --version
-```
+In order to run this project you need:
+
+[Install Ruby](https://www.ruby-lang.org/en/documentation/installation/)
+
 ### Setup
 
 Clone or download the Collectify repository to your local machine.
 ```sh
+  cd my-folder
   git clone https://github.com/danielamoreno699/blog-app-rails
 ```
 Open your terminal and navigate to the cloned project directory.
@@ -91,15 +92,27 @@ This project does not require additional dependencies, just Ruby interpreter. Ho
 
 ```sh
 bundle install
+npm install
 ```
+
 
 ### Usage
- - To run Collectify, execute the `main.rb file`:
+ 
+To run the project, navigate to the project directory and execute the following command:
 
 ```sh
-  ruby main.rb
+  bundle install
+  rails db:create db:migrate rails server
 ```
-The console app will present a menu of options for managing and interacting with your collections. Simply follow the prompts and provide the necessary information when prompted. The program will process and output your request.
+
+### Run tests
+
+To run tests, run the following command:
+
+Run the following command
+```sh
+rspec spec/
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -112,20 +125,29 @@ The console app will present a menu of options for managing and interacting with
 - GitHub: [@daniela](https://github.com/danielamoreno699)
 - LinkedIn: [Daniela Moreno](https://www.linkedin.com/in/daniela-moreno-06a139124/)
 
+## 👥 Collaborator
 
+👤 **Salman Ahmad Khan**
+- GitHub: [@githubhandle](https://github.com/fpsapc)
+- Twitter: [@twitterhandle](https://twitter.com/fpsapc)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/salman-ahmad1987 )
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **User Interface**
-- **validations:** 
-- **processing data in models:** 
-- **set up and controllers** 
-- **views** 
-- **forms** 
-- **integrations specs for views ** 
-- **add advice** 
+- **I will add following features in this project**
+- Validations and Model specs.
+- Processing data in models.
+- Setup and controllers.
+- Controllers specs.
+- Views.
+- Forms.
+- Integration specs for Views and fixing n+1 problems.
+- Add Devise.
+- Add authorization rules.
+- Add API endpoints.
+- API documentation.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

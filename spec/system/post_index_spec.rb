@@ -44,7 +44,6 @@ RSpec.describe 'Post Index', type: :system do
     expect(page).to have_content(post1.Text)
   end
 
-
   it 'displays the first comments on a post' do
     visit user_posts_path(user_id: user.id)
 
