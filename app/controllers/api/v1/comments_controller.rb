@@ -1,4 +1,3 @@
-
 class Api::V1::CommentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create], if: -> { request.format.json? }
 
