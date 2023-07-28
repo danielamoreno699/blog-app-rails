@@ -13,5 +13,9 @@
     </button>
 
     <%= render_flash_messages %>
+
+    <% if can? :destroy, @post %>
+  <%= button_to "Delete post", delete_user_post_path(user_id: @post.user.id, id: @post.id), method: :delete, class: "btn" %>
+<% end %>
   </body>
 </html>

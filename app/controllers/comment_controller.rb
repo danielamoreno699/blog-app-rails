@@ -1,5 +1,7 @@
 class CommentController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :authenticate_user!, only: %i[create destroy]
+  load_and_authorize_resource
+  
   def new
     @current_user = current_user
     @post = Post.find(params[:post_id])
@@ -28,12 +30,6 @@ class CommentController < ApplicationController
     end
   end
 
-  private
-
-  def comment_params
-    params.require(:comment).permit(:Text)
-  end
-
   def destroy
     @comment = Comment.find(params[:id])
     @post = @comment.post
@@ -41,4 +37,12 @@ class CommentController < ApplicationController
     @comment.destroy!
     redirect_to user_post_path(id: @post.id), notice: 'Comment was successfully deleted!'
   end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:Text)
+  end
+
+
 end

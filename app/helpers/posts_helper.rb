@@ -13,17 +13,26 @@ module PostsHelper
   def render_comments_section(post)
     content_tag(:ul, class: 'ul-comments-box') do
       concat content_tag(:h4, 'Section for Comments:', class: 'section-comments')
-
+  
       if post.comments.blank?
         concat content_tag(:li, 'no comments for the moment')
       else
         post.recent_comments.each do |comment|
-          concat content_tag(:li,
-                             "#{comment.user.name}: #{comment.Text.blank? ? 'no comments' : comment.Text}")
+          puts "Inside the loop for comment: #{comment.id}"
+          concat content_tag(:li, "#{comment.user.name}: #{comment.Text.blank? ? 'no comments' : comment.Text}")
+  
+          if can?(:destroy, comment)
+            concat content_tag(:li) do
+              button_to "Delete", delete_comment_path(user_id: comment.user, post_id: comment.post.id, id: comment.id), method: :delete, class: "btn-delete"
+            end
+          end
         end
       end
     end
   end
+  
+  
+  
 
   def render_flash_messages
     if flash[:success]
