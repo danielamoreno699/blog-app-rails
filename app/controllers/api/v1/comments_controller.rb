@@ -22,7 +22,7 @@ class Api::V1::CommentsController < ApplicationController
     puts params
 
     new_comment = post.comments.new(
-      text: params['text'],
+      text: params['Text'],
       user:
     )
 
