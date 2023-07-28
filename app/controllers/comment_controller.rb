@@ -1,7 +1,7 @@
 class CommentController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
   load_and_authorize_resource
-  
+
   def new
     @current_user = current_user
     @post = Post.find(params[:post_id])
@@ -33,9 +33,10 @@ class CommentController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @post = @comment.post
-    @post.decrement!(:CommentsCounter)
     @comment.destroy!
-    redirect_to user_post_path(id: @post.id), notice: 'Comment was successfully deleted!'
+    redirect_to user_post_path(user_id: @post.user.id, id: @post.id), notice: 'Comment was successfully deleted!'
+
+
   end
 
   private

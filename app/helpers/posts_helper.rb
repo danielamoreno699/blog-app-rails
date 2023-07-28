@@ -18,12 +18,11 @@ module PostsHelper
         concat content_tag(:li, 'no comments for the moment')
       else
         post.recent_comments.each do |comment|
-          puts "Inside the loop for comment: #{comment.id}"
           concat content_tag(:li, "#{comment.user.name}: #{comment.Text.blank? ? 'no comments' : comment.Text}")
   
           if can?(:destroy, comment)
             concat content_tag(:li) do
-              button_to "Delete", delete_comment_path(user_id: comment.user, post_id: comment.post.id, id: comment.id), method: :delete, class: "btn-delete"
+              button_to "Delete", delete_user_comment_path(user_id: comment.user, post_id: comment.post, id: comment.id), method: :delete, class: "btn-delete"
             end
           end
         end
