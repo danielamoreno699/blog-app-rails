@@ -4,8 +4,8 @@ class Post < ApplicationRecord
   validates :LikesCounter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
 
   belongs_to :user, foreign_key: 'author_id'
-  has_many :likes
-  has_many :comments
+  has_many :likes, dependant: :destroy
+  has_many :comments, dependant: :destroy
 
   after_create :increment_post_counter
   after_destroy :decrement_post_counter
