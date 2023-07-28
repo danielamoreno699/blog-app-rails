@@ -9,30 +9,6 @@ module PostsHelper
     end
   end
 
-  # app/helpers/posts_helper.rb
-  def render_comments_section(post)
-    content_tag(:ul, class: 'ul-comments-box') do
-      concat content_tag(:h4, 'Section for Comments:', class: 'section-comments')
-  
-      if post.comments.blank?
-        concat content_tag(:li, 'no comments for the moment')
-      else
-        post.recent_comments.each do |comment|
-          concat content_tag(:li, "#{comment.user.name}: #{comment.Text.blank? ? 'no comments' : comment.Text}")
-  
-          if can?(:destroy, comment)
-            concat content_tag(:li) do
-              button_to "Delete", delete_user_comment_path(user_id: comment.user, post_id: comment.post, id: comment.id), method: :delete, class: "btn-delete"
-            end
-          end
-        end
-      end
-    end
-  end
-  
-  
-  
-
   def render_flash_messages
     if flash[:success]
       content_tag(:div, flash[:success], class: 'flash-success')

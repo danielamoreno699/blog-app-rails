@@ -35,8 +35,6 @@ class CommentController < ApplicationController
     @post = @comment.post
     @comment.destroy!
     redirect_to user_post_path(user_id: @post.user.id, id: @post.id), notice: 'Comment was successfully deleted!'
-
-
   end
 
   private
@@ -44,6 +42,4 @@ class CommentController < ApplicationController
   def comment_params
     params.require(:comment).permit(:Text)
   end
-
-
 end
