@@ -62,3 +62,12 @@
   border: 1px solid #a94442;
   padding: 10px;
 }
+
+.btn-delete {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
