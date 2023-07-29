@@ -6,6 +6,7 @@ class Api::V1::SessionsController < ApplicationController
       if user&.valid_password?(params[:password])
         token = generate_jwt_token(user)
         user.update(api_token: token)
+        puts "Login successful for email: #{params[:email]}. Token: #{token}" # Debug output
         puts "Token: #{token}" # Debug output
         render json: { api_token: token }
       else

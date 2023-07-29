@@ -34,7 +34,7 @@ class User < ApplicationRecord
   end
 
 
-  # def generate_api_token
-  #   self.api_token = SecureRandom.hex(16)
-  # end
+  def generate_api_token
+    self.api_token = SecureRandom.hex(16)
+  end
 end
