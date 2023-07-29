@@ -30,7 +30,7 @@ class User < ApplicationRecord
 
   def generate_api_token
     self.api_token = SecureRandom.hex(16)
-    puts "Generated API Token: #{self.api_token}" # Debug output
+    puts "Generated API Token: #{self.api_token}" 
   end
 
 
