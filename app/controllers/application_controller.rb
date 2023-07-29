@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  # protect_from_forgery with: :exception, unless: -> { request.format.json? }
-  # before_action :authenticate_user!
-  # before_action :update_allowed_parameters, if: :devise_controller?
+  protect_from_forgery with: :exception, unless: -> { request.format.json? }
+  before_action :authenticate_user!
+  before_action :update_allowed_parameters, if: :devise_controller?
 
   protected
 
