@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :posts, foreign_key: 'author_id', dependent: :destroy
   has_many :likes, foreign_key: 'author_id'
 
-  #before_save :generate_api_token
+  # before_save :generate_api_token
   after_initialize :set_default_role, if: :new_record?
 
   def recent_posts
@@ -30,11 +30,6 @@ class User < ApplicationRecord
 
   def generate_api_token
     self.api_token = SecureRandom.hex(16)
-    puts "Generated API Token: #{self.api_token}" 
-  end
-
-
-  def generate_api_token
-    self.api_token = SecureRandom.hex(16)
+    puts "Generated API Token: #{api_token}"
   end
 end
