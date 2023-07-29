@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable, :trackable
 
@@ -12,9 +14,14 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: 'author_id'
 
   #before_save :generate_api_token
+  after_initialize :set_default_role, if: :new_record?
 
   def recent_posts
     posts.order(created_at: :desc).limit(3)
+  end
+
+  def set_default_role
+    self.role ||= 'user' # Replace 'user' with the default role you want to set
   end
 
   before_save :generate_api_token
